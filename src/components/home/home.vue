@@ -1,9 +1,152 @@
 <template>
-    <div>我是第一个vue项目的首页</div>
+    <el-container class="home">
+      <el-header class="home-header">
+         <el-row type="flex" class="row-bg" >
+           <el-col :span="4">
+               <div class="grid-content bg-purple">
+                   <img src="@/assets/imgs/logo.png" alt="">
+               </div>
+        </el-col>
+           <el-col :span="15">
+               <div class="grid-content bg-purple-light">
+                   <h3>后台管理系统</h3>
+               </div>
+           </el-col>
+           <el-col :span="5" class="home-foot">
+               <div class="grid-content bg-purple">
+                   欢迎来到后台管理
+                   <a href="javascript:;">退出</a>
+               </div>
+           </el-col>
+         </el-row>
+      </el-header>
+      <el-container>
+        <el-aside width="200px" class="home-content">
+        <el-row class="tac">
+          <el-col :span="24">
+           <el-menu
+             default-active="2"
+             @open="handleOpen"
+             @close="handleClose"
+             background-color="#545c64"
+             text-color="#fff">
+             <el-submenu index="1">
+               <template slot="title">
+                 <i class="el-icon-location"></i>
+                 <span>用户管理</span>
+               </template>
+                <el-menu-item index="1-1">
+                  <i class="el-icon-menu"></i>
+                  <span slot="title">用户列表</span>
+                </el-menu-item>
+             </el-submenu>
+             <el-submenu index="2">
+               <template slot="title">
+                 <i class="el-icon-location"></i>
+                 <span>权限管理</span>
+               </template>
+                <el-menu-item index="2-1">
+                  <i class="el-icon-menu"></i>
+                  <span slot="title">角色列表</span>
+                </el-menu-item>
+                <el-menu-item index="2-2">
+                  <i class="el-icon-menu"></i>
+                  <span slot="title">权限列表</span>
+                </el-menu-item>
+             </el-submenu>
+             <el-submenu index="3">
+               <template slot="title">
+                 <i class="el-icon-location"></i>
+                 <span>商品管理</span>
+               </template>
+               <el-menu-item index="3-1">
+                  <i class="el-icon-menu"></i>
+                  <span slot="title">商品列表</span>
+               </el-menu-item>
+               <el-menu-item index="3-2">
+                  <i class="el-icon-menu"></i>
+                  <span slot="title">分类参数</span>
+                </el-menu-item>
+                <el-menu-item index="3-3">
+                  <i class="el-icon-menu"></i>
+                  <span slot="title">商品分类</span>
+                </el-menu-item>
+             </el-submenu>
+             <el-submenu index="4">
+               <template slot="title">
+                 <i class="el-icon-location"></i>
+                 <span>订单管理</span>
+               </template>
+               <el-menu-item index="4-1">
+                  <i class="el-icon-menu"></i>
+                  <span slot="title">订单列表</span>
+               </el-menu-item>
+             </el-submenu>
+             <el-submenu index="5">
+               <template slot="title">
+                 <i class="el-icon-location"></i>
+                 <span>数据管理</span>
+               </template>
+               <el-menu-item index="5-1">
+                  <i class="el-icon-menu"></i>
+                  <span slot="title">数据报表</span>
+               </el-menu-item>
+             </el-submenu>
+           </el-menu>
+         </el-col>
+        </el-row>
+        </el-aside>
+        <el-main class="home-content-foot">
+
+        </el-main>
+      </el-container>
+    </el-container>
 </template>
 <script>
 export default {
+  methods: {
+    handleOpen (key, keyPath) {
+      console.log(key, keyPath)
+    },
+    handleClose (key, keyPath) {
+      console.log(key, keyPath)
+    }
+  }
 }
 </script>
 <style>
+.home {
+  height: 100%;
+}
+.home-header {
+  background-color: #b3c1cd;
+  margin: 0;
+}
+.home-header img {
+  width: 200px;
+  height: 50px;
+}
+.home-header h3 {
+  margin: 0;
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+}
+.home-header .home-foot {
+  height: 60px;
+  line-height: 60px;
+  text-align: right;
+}
+.home-content {
+  background-color: #545c64;
+}
+.home-content-foot {
+  background-color: #eaefe1;
+}
+.el-menu{
+    border-right: none
+}
+.el-submenu .el-menu-item{
+    color: rgb(255, 208, 75)
+}
 </style>
