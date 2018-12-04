@@ -1,11 +1,8 @@
 <template>
-  <div id="app">
-    <router-view></router-view>
-  </div>
+    <div>我是第一个vue项目的首页</div>
 </template>
 <script>
 export default {
-  name: 'App'
 }
 </script>
 <style>
